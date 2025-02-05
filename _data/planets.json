@@ -1,1 +1,12 @@
-
+[
+    { "name": "Sun", "au": "Type: G2V", "color": "yellow" },
+    { "name": "Mercury", "au": "0.39", "color": "gray" },
+    { "name": "Venus", "au": "0.72", "color": "orange" },
+    { "name": "Earth", "au": "1.00", "color": "blue" },
+    { "name": "Mars", "au": "1.52", "color": "red" },
+    { "name": "Jupiter", "au": "5.20", "color": "brown" },
+    { "name": "Saturn", "au": "9.58", "color": "gold" },
+    { "name": "Uranus", "au": "19.22", "color": "lightblue" },
+    { "name": "Neptune", "au": "30.05", "color": "darkblue" }
+  ]
+  

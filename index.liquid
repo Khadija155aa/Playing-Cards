@@ -1,7 +1,22 @@
 ---
-layout: layout.liquid
-title: 11ty Boilerplate
+title: Planetary Playing Cards
+layout: base.liquid
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<h1>Planetary Playing Cards</h1>
+
+<div class="grid-container">
+    {% for planet in planets %}
+        {% include 'planet.liquid' planet %}
+    {% endfor %}
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    ScrollReveal().reveal('.card', {
+        duration: 1000,
+        origin: 'bottom',
+        distance: '50px',
+        easing: 'ease-in-out'
+    });
+</script>
