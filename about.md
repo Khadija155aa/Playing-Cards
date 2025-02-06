@@ -1,5 +1,5 @@
 ---
-layout: layout.liquid
+layout: planet.liquid
 title: About
 ---
 
