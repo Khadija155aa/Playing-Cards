@@ -1,22 +1,17 @@
 ---
+layout: default
 title: Planetary Playing Cards
-layout: planet.liquid
 ---
 
 <h1>Planetary Playing Cards</h1>
 
-<div class="grid-container">
-    {% for planet in planets %}
-        {% include 'planet.liquid' planet %}
-    {% endfor %}
+<div class="grid">
+  {% include "planet.liquid", name: "Mercury", color: "#b0b0b0", distance: "0.39" %}   <!-- Gray -->
+  {% include "planet.liquid", name: "Venus", color: "#e4a86e", distance: "0.72" %}     <!-- Pale Orange -->
+  {% include "planet.liquid", name: "Earth", color: "#2a7fff", distance: "1.00" %}     <!-- Blue -->
+  {% include "planet.liquid", name: "Mars", color: "#c1440e", distance: "1.52" %}      <!-- Reddish -->
+  {% include "planet.liquid", name: "Jupiter", color: "#e29468", distance: "5.20" %}   <!-- Light Brown -->
+  {% include "planet.liquid", name: "Saturn", color: "#f0c674", distance: "9.58" %}    <!-- Yellowish -->
+  {% include "planet.liquid", name: "Uranus", color: "#68c4e2", distance: "19.18" %}   <!-- Cyan -->
+  {% include "planet.liquid", name: "Neptune", color: "#4561d4", distance: "30.07" %}  <!-- Dark Blue -->
 </div>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-    ScrollReveal().reveal('.card', {
-        duration: 1000,
-        origin: 'bottom',
-        distance: '50px',
-        easing: 'ease-in-out'
-    });
-</script>
