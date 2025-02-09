@@ -1,22 +1,98 @@
 ---
 title: Planetary Playing Cards
 layout: layout.liquid
+planets:
+  - name: Mercury
+    color: gray
+    au: 0.39
+  - name: Venus
+    color: yellow
+    au: 0.72
+  - name: Earth
+    color: blue
+    au: 1.0
+  - name: Mars
+    color: red
+    au: 1.52
+  - name: Jupiter
+    color: orange
+    au: 5.2
+  - name: Saturn
+    color: goldenrod
+    au: 9.58
+  - name: Uranus
+    color: lightblue
+    au: 19.22
+  - name: Neptune
+    color: darkblue
+    au: 30.05
 ---
+
 <main class="grid-container">
-  <div class="card sun">
-    <div class="circle"></div>
-    <h2>Sun</h2>
-    <p>Type G2V</p>
+  <div class="sun-container">
+    <div class="card sun">
+      <div class="circle" style="background: yellow;"></div>
+      <h2>Sun</h2>
+      <p>Type G2V</p>
+    </div>
   </div>
 
-  {% for planet in planets %}
-  <div class="card planet">
-    <div class="circle" style="background: {{ planet.color }};"></div>
-    <h2>{{ planet.name }}</h2>
-    <p>{{ planet.au }} AU</p>
+  <div class="planets-container">
+    {% for planet in planets %}
+    <div class="card planet">
+      <div class="circle" style="background: {{ planet.color }};"></div>
+      <h2>{{ planet.name }}</h2>
+      <p>{{ planet.au }} AU</p>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </main>
+
+<style>
+  body {
+    background: linear-gradient(45deg, #ff6f61, #ffcc33, #33ccff) !important;
+    font-family: Arial, sans-serif;
+  }
+
+  .grid-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .sun-container {
+    flex: 0 0 200px;
+  }
+
+  .planets-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    background: #2c2f3a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+</style>
 
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
