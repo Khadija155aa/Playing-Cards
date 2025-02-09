@@ -1,28 +1,44 @@
-body {
-    background-color: black;
-    color: white;
-  }
-  
-  h1 {
-    font-size: 2em;
-    font-weight: bold;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .planet {
-    font-weight: bold;
-  }
-  
-  .mercury { color: gray; }
-  .venus { color: orange; }
-  .earth { color: blue; }
-  .mars { color: red; }
-  .jupiter { color: brown; }
-  .saturn { color: goldenrod; }
-  .uranus { color: lightblue; }
-  .neptune { color: darkblue; }
-  
+
+  /* Grid layout for planetary cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 40px 0;
+}
+
+/* Card styles */
+.card {
+  background: #3E4357;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Circle representation for planets */
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Colors for different planets */
+.sun .circle { background: yellow; }
+.planet:nth-child(2) .circle { background: gray; }  /* Mercury */
+.planet:nth-child(3) .circle { background: orange; } /* Venus */
+.planet:nth-child(4) .circle { background: blue; } /* Earth */
+.planet:nth-child(5) .circle { background: red; } /* Mars */
+.planet:nth-child(6) .circle { background: brown; } /* Jupiter */
+.planet:nth-child(7) .circle { background: gold; } /* Saturn */
+.planet:nth-child(8) .circle { background: lightblue; } /* Uranus */
+.planet:nth-child(9) .circle { background: darkblue; } /* Neptune */
