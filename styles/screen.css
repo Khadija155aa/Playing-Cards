@@ -1,44 +1,84 @@
-
-  /* Grid layout for planetary cards */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  padding: 40px 0;
+/* General Styles */
+body {
+  background: linear-gradient(45deg, #ff6f61, #ffcc33, #33ccff);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-/* Card styles */
-.card {
-  background: #3E4357;
-  border-radius: 10px;
+/* Main Layout */
+.grid-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
   padding: 20px;
+}
+
+/* Sun Container */
+.sun-container {
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Planet Cards Container */
+.planets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/* Card Styling */
+.card {
+  background: #2c2f3a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
   width: 150px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Circle representation for planets */
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Sun and Planet Circles */
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin: 0 auto 10px;
+  border: 3px solid white;
 }
 
-/* Hover effect */
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+/* Specific Colors for the Sun and Planets */
+.sun .circle {
+  background: yellow;
 }
 
-/* Colors for different planets */
-.sun .circle { background: yellow; }
-.planet:nth-child(2) .circle { background: gray; }  /* Mercury */
-.planet:nth-child(3) .circle { background: orange; } /* Venus */
-.planet:nth-child(4) .circle { background: blue; } /* Earth */
-.planet:nth-child(5) .circle { background: red; } /* Mars */
-.planet:nth-child(6) .circle { background: brown; } /* Jupiter */
-.planet:nth-child(7) .circle { background: gold; } /* Saturn */
-.planet:nth-child(8) .circle { background: lightblue; } /* Uranus */
-.planet:nth-child(9) .circle { background: darkblue; } /* Neptune */
+.planet:nth-child(1) .circle { background: gray; } /* Mercury */
+.planet:nth-child(2) .circle { background: yellow; } /* Venus */
+.planet:nth-child(3) .circle { background: blue; } /* Earth */
+.planet:nth-child(4) .circle { background: red; } /* Mars */
+.planet:nth-child(5) .circle { background: orange; } /* Jupiter */
+.planet:nth-child(6) .circle { background: goldenrod; } /* Saturn */
+.planet:nth-child(7) .circle { background: lightblue; } /* Uranus */
+.planet:nth-child(8) .circle { background: darkblue; } /* Neptune */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .planets-container {
+    justify-content: center;
+  }
+}
