@@ -8,47 +8,47 @@ body {
   text-align: center;
 }
 
-/* Layout: Sun on Left, Planets in Two Rows */
+/* Layout: Sun + Planets */
 .grid-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-/* Sun Box - Bigger Size */
+/* Sun Box - Bigger but Inside */
 .sun-container {
-  flex-shrink: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  justify-content: center;
+  width: 220px;
+  height: 250px;
   background: #2c2f3a;
   border-radius: 20px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Sun Circle - Large */
+/* Sun Circle - Fits Inside */
 .sun .circle {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   background: yellow;
   border-radius: 50%;
   border: 5px solid white;
 }
 
-/* Planets Container - Two Rows of Four */
+/* Planets Grid - Two Rows of Four */
 .planets-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 20px;
   width: 600px;
   justify-content: center;
 }
 
-/* Planet Card Styles */
+/* Planet Cards */
 .card {
   background: #2c2f3a;
   color: white;
