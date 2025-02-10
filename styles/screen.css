@@ -1,66 +1,72 @@
 /* General Page Styles */
 body {
-  background-color: #1a1a2e;
-  font-family: Arial, sans-serif;
+  background-color: #0d1b2a;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 20px;
   color: white;
   text-align: center;
 }
 
-/* Main Layout */
+/* Main Layout - Sun Box & Planets in Two Horizontal Rows */
 .grid-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* Sun Box - Fits Properly */
+/* Sun Box - Bigger & Centered */
 .sun-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 250px;
-  background: #2c2f3a;
-  border-radius: 15px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #ffcc00, #ff6600);
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+  border: 6px solid white;
 }
 
-/* Sun Circle - Smaller to Fit Inside */
+/* Sun Circle - Inside the Sun Box */
 .sun .circle {
-  width: 120px;
-  height: 120px;
-  background: yellow;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ffdd55, #ff4500);
   border-radius: 50%;
-  border: 5px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 6px solid white;
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
 }
 
-/* Planet Grid - Two Rows of Four */
+/* Planets Wrapper - Two Horizontal Rows */
 .planets-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 600px;
+  gap: 25px;
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* Planet Cards */
 .card {
-  background: #2c2f3a;
+  background: linear-gradient(to bottom, #1e3a8a, #1a1a2e);
   color: white;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
-  width: 130px;
-  height: 160px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  width: 120px;
+  height: 150px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: scale(1.1);
 }
 
 /* Planet Circles */
@@ -70,20 +76,24 @@ body {
   border-radius: 50%;
   margin: 0 auto 10px;
   border: 3px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Planet Colors */
-.mercury .circle { background: gray; }
-.venus .circle { background: yellow; }
-.earth .circle { background: blue; }
-.mars .circle { background: red; }
-.jupiter .circle { background: orange; }
-.saturn .circle { background: goldenrod; }
-.uranus .circle { background: lightblue; }
-.neptune .circle { background: darkblue; }
+.mercury .circle { background: linear-gradient(to bottom, gray, silver); }
+.venus .circle { background: linear-gradient(to bottom, yellow, gold); }
+.earth .circle { background: linear-gradient(to bottom, blue, green); }
+.mars .circle { background: linear-gradient(to bottom, red, darkred); }
+.jupiter .circle { background: linear-gradient(to bottom, orange, brown); }
+.saturn .circle { background: linear-gradient(to bottom, goldenrod, peru); }
+.uranus .circle { background: linear-gradient(to bottom, lightblue, teal); }
+.neptune .circle { background: linear-gradient(to bottom, darkblue, navy); }
 
-/* Responsive - Adjust for Smaller Screens */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid-container {
+    flex-direction: column;
+  }
   .planets-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
