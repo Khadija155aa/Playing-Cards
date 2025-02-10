@@ -1,10 +1,31 @@
+/* Define Custom Properties (CSS Variables) */
+:root {
+  /* Colors */
+  --sun-yellow: #ffcc00;
+  --sun-orange: #ff6600;
+  --planet-bg-color: #1e3a8a;
+  --planet-hover-bg: #374151;
+  --text-color: white;
+  --shadow-color: rgba(13, 27, 42, 0.6);
+  
+  /* Sizes */
+  --sun-size: 400px;
+  --planet-size: 70px;
+  --planet-card-width: 120px;
+  --planet-card-height: 150px;
+  --planet-card-padding: 15px;
+  
+  /* Shadow */
+  --planet-card-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 /* General Page Styles */
 body {
   background-color: #0d1b2a;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 20px;
-  color: white;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -24,21 +45,23 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, #ffcc00, #ff6600);
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
-  border: 6px solid white;
+  width: var(--sun-size);
+  height: var(--sun-size);
+  background: radial-gradient(circle, var(--sun-yellow), var(--sun-orange));
+  border-radius: 50%;
+  box-shadow: 0 0 50px var(--shadow-color);
+  border: 6px solid var(--text-color);
+  position: relative;
+  margin-left: -50px;
 }
 
 /* Sun Circle - Inside the Sun Box */
 .sun .circle {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background: radial-gradient(circle, #ffdd55, #ff4500);
   border-radius: 50%;
-  border: 6px solid white;
+  border: 6px solid var(--text-color);
   box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
 }
 
@@ -53,33 +76,34 @@ body {
 
 /* Planet Cards */
 .card {
-  background: linear-gradient(to bottom, #1e3a8a, #1a1a2e);
-  color: white;
-  padding: 15px;
+  background: var(--planet-bg-color);
+  color: var(--text-color);
+  padding: var(--planet-card-padding);
   border-radius: 15px;
   text-align: center;
-  width: 120px;
-  height: 150px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s;
+  width: var(--planet-card-width);
+  height: var(--planet-card-height);
+  box-shadow: var(--planet-card-shadow);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-/* Hover Effect */
+/* Hover Effect for Planet Cards */
 .card:hover {
   transform: scale(1.1);
+  background-color: var(--planet-hover-bg);
 }
 
 /* Planet Circles */
 .circle {
-  width: 70px;
-  height: 70px;
+  width: var(--planet-size);
+  height: var(--planet-size);
   border-radius: 50%;
   margin: 0 auto 10px;
-  border: 3px solid white;
+  border: 3px solid var(--text-color);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Planet Colors */
+/* Individual Planet Colors (use gradients to distinguish planets) */
 .mercury .circle { background: linear-gradient(to bottom, gray, silver); }
 .venus .circle { background: linear-gradient(to bottom, yellow, gold); }
 .earth .circle { background: linear-gradient(to bottom, blue, green); }
