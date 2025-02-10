@@ -8,38 +8,41 @@ body {
   text-align: center;
 }
 
-/* Layout: Sun + Planets */
+/* Main Layout */
 .grid-container {
   display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
-/* Sun Box - Bigger but Inside */
+/* Sun Box - Fits Properly */
 .sun-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 220px;
+  width: 200px;
   height: 250px;
   background: #2c2f3a;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
 }
 
-/* Sun Circle - Fits Inside */
+/* Sun Circle - Smaller to Fit Inside */
 .sun .circle {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   background: yellow;
   border-radius: 50%;
   border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Planets Grid - Two Rows of Four */
+/* Planet Grid - Two Rows of Four */
 .planets-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -56,6 +59,7 @@ body {
   border-radius: 10px;
   text-align: center;
   width: 130px;
+  height: 160px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -78,12 +82,8 @@ body {
 .uranus .circle { background: lightblue; }
 .neptune .circle { background: darkblue; }
 
-/* Responsive */
+/* Responsive - Adjust for Smaller Screens */
 @media (max-width: 768px) {
-  .grid-container {
-    flex-direction: column;
-    align-items: center;
-  }
   .planets-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
