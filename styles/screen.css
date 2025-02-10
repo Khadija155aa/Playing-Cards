@@ -1,57 +1,72 @@
-/* General Styles */
+/* General Page Styles */
 body {
-  background: #1a1a2e;
+  background-color: #1a1a2e;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
+  color: white;
+  text-align: center;
 }
 
-/* Layout: Sun on the Left, Planets in a Row */
+/* Layout: Sun on Left, Planets in Two Rows */
 .grid-container {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Sun Box */
+/* Sun Box - Bigger Size */
 .sun-container {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
+  width: 280px;
+  height: 280px;
+  background: #2c2f3a;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Planets Box */
+/* Sun Circle - Larger */
+.sun .circle {
+  width: 140px;
+  height: 140px;
+  background: yellow;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+/* Planets Box - Two Rows */
 .planets-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 700px;
 }
 
-/* Card Style */
+/* Planet Card Styles */
 .card {
   background: #2c2f3a;
   color: white;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
-  width: 120px;
+  width: 140px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Planet & Sun Circles */
+/* Planet Circles */
 .circle {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0 auto 10px;
   border: 3px solid white;
 }
 
-/* Colors */
-.sun .circle { background: yellow; }
+/* Planet Colors */
 .mercury .circle { background: gray; }
 .venus .circle { background: yellow; }
 .earth .circle { background: blue; }
@@ -68,6 +83,6 @@ body {
     align-items: center;
   }
   .planets-container {
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
